@@ -10,3 +10,11 @@ puts "Exercise 7"
 puts "----------"
 
 # Your code goes here ...
+puts "Type a name of a part of Vancouver. (Such as: Kits, Langley, Delta, White Rock)"
+@userStoreName = gets.chomp;
+
+@newStore = Store.create(name: @userStoreName);
+
+@newStore.errors.full_messages.each do |error|
+  puts error;
+end
